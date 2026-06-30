@@ -1,7 +1,6 @@
 /*
  * Design tokens for the Angular app — Tailwind v4 CSS-first theme.
- * Owned by the Angular app only (not shared with the Eleventy website), so the
- * two frontends can evolve their palettes independently.
+ * Owned by the Angular app — keeps the app's brand palette self-contained.
  *
  * Every token under @theme becomes a utility, e.g.
  *   --color-brand-500  ->  bg-brand-500 text-brand-500 border-brand-500

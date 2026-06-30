@@ -42,14 +42,9 @@ export class App {
     email: 'me@ojiepermana.com',
   };
 
-  /**
-   * Sidebar navigation. In-app routes use `link` (Angular Router, resolved
-   * against the `/app/` baseHref); the marketing site is an `externalLink`.
-   */
+  /** Sidebar navigation. In-app routes use `link` (Angular Router). */
   protected readonly nav: readonly NavigationItem[] = [
     { id: 'dashboard', type: 'item', title: 'Dashboard', icon: 'dashboard', link: '/', exactMatch: true },
     { id: 'about', type: 'item', title: 'About', icon: 'info', link: '/about' },
-    { type: 'divider' },
-    { id: 'site', type: 'item', title: 'Marketing site', icon: 'public', href: '/', externalLink: true },
   ];
 }

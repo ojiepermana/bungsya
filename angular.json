@@ -12,8 +12,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": { "base": "dist/website/app", "browser": "" },
-            "baseHref": "/app/",
+            "outputPath": { "base": "dist/public", "browser": "" },
             "index": "apps/app/src/index.html",
             "browser": "apps/app/src/main.ts",
             "tsConfig": "apps/app/tsconfig.app.json",

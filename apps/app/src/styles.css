@@ -11,7 +11,7 @@
 @import "tailwindcss" source(none);
 @import "@ojiepermana/angular-theme/styles/css/base/tailwind.css";
 
-/* The app's own brand tokens (brand-*, font-display) — independent of the Eleventy site. */
+/* The app's own brand tokens (brand-*, font-display). */
 @import "./theme.css";
 
 /* Scope class detection: the app's own templates + the design system's compiled
