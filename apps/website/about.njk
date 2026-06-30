@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: About
+description: How the Eleventy site, Angular app, and Elysia API fit into one Bun package.
+---
+<section class="mx-auto max-w-3xl px-6 py-20">
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">How it fits together</h1>
+  <p class="mt-4 text-slate-600">
+    Everything lives in one <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm">package.json</code>
+    and runs on Bun. Each app builds into its own slice of <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm">dist/</code>.
+  </p>
+
+  <dl class="mt-10 space-y-6">
+    <div class="rounded-xl bg-white p-5 ring-1 ring-slate-200">
+      <dt class="font-semibold text-brand-700">Eleventy → dist/website</dt>
+      <dd class="mt-1 text-sm text-slate-600">This static site. Tailwind is compiled by the Tailwind CLI into <code>dist/website/assets/styles.css</code>.</dd>
+    </div>
+    <div class="rounded-xl bg-white p-5 ring-1 ring-slate-200">
+      <dt class="font-semibold text-brand-700">Angular 22 → dist/website/app</dt>
+      <dd class="mt-1 text-sm text-slate-600">Built with <code>baseHref: /app/</code> and a flattened output path, so it nests cleanly under the static site. Tailwind runs through Angular's PostCSS pipeline.</dd>
+    </div>
+    <div class="rounded-xl bg-white p-5 ring-1 ring-slate-200">
+      <dt class="font-semibold text-brand-700">ElysiaJS → dist/backend</dt>
+      <dd class="mt-1 text-sm text-slate-600">In production a single Bun process serves the static site, the Angular app, and the <code>/api/*</code> routes from one origin.</dd>
+    </div>
+  </dl>
+
+  <a href="/" class="mt-10 inline-block text-sm font-medium text-brand-600 hover:text-brand-700">← Back home</a>
+</section>

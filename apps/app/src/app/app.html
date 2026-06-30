@@ -1,0 +1,22 @@
+<!--
+  App shell from @ojiepermana/angular: LayoutWrapperDefault assembles the
+  Layout + Navigation skeleton from data inputs (brand, user, nav items).
+  Page content (the router outlet) is projected into the layout content area.
+
+  surface / layout-appearance / width / layout-type are bound to LayoutService
+  (seeded by registerDefaults in app.ts) so layout.set*() switches them at
+  runtime. nav-type (sidebar | dockbar | navbar | flyout) is a navigation
+  choice, not a LayoutService axis, so it stays static here.
+-->
+<LayoutWrapperDefault
+  [data]="nav"
+  [brand]="brand"
+  [user]="user"
+  nav-type="sidebar"
+  [layout-type]="layout.type()"
+  [surface]="layout.surface()"
+  [layout-appearance]="layout.appearance()"
+  [width]="layout.width()"
+>
+  <router-outlet />
+</LayoutWrapperDefault>

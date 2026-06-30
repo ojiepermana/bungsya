@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<section class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+  <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-100">
+    Single package · Bun runtime
+  </span>
+  <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
+    {{ site.name }}
+  </h1>
+  <p class="mt-4 max-w-2xl text-lg text-slate-600">{{ site.tagline }}</p>
+  <p class="mt-2 max-w-2xl text-slate-500">{{ site.description }}</p>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a href="/app/"
+       class="inline-flex items-center rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition-colors">
+      Launch the Angular app →
+    </a>
+    <a href="/about/"
+       class="inline-flex items-center rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 hover:ring-brand-300 transition">
+      How it fits together
+    </a>
+  </div>
+</section>
+
+<section class="mx-auto max-w-5xl px-6 pb-24">
+  <div class="grid gap-6 sm:grid-cols-3">
+    {% set cards = [
+      { name: "Eleventy", role: "Static site generator", path: "dist/website", desc: "These marketing/content pages — fast static HTML with Tailwind." },
+      { name: "Angular 22", role: "Frontend SPA", path: "dist/website/app", desc: "Served at /app/, a zoneless standalone app talking to the API." },
+      { name: "ElysiaJS", role: "Backend API", path: "dist/backend", desc: "Bun-native server exposing /api/* and serving everything in prod." }
+    ] %}
+    {%- for card in cards %}
+    <article class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 hover:ring-brand-200 transition">
+      <h2 class="text-lg font-semibold text-slate-900">{{ card.name }}</h2>
+      <p class="text-sm font-medium text-brand-600">{{ card.role }}</p>
+      <p class="mt-3 text-sm text-slate-600">{{ card.desc }}</p>
+      <code class="mt-4 inline-block rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{{ card.path }}</code>
+    </article>
+    {%- endfor %}
+  </div>
+</section>

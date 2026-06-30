@@ -1,0 +1,51 @@
+<section class="mx-auto max-w-3xl px-6 py-16">
+  <div class="flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <h1 class="text-3xl font-bold tracking-tight">Angular 22 SPA</h1>
+      <span
+        class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ring-1"
+        [class.bg-green-50]="health() === 'ok'"
+        [class.text-green-700]="health() === 'ok'"
+        [class.ring-green-200]="health() === 'ok'"
+        [class.bg-amber-50]="health() !== 'ok'"
+        [class.text-amber-700]="health() !== 'ok'"
+        [class.ring-amber-200]="health() !== 'ok'"
+      >
+        API: {{ health() }}
+      </span>
+    </div>
+
+    <!-- Design-system Button (button[Button]) + theme service from @ojiepermana/angular -->
+    <button type="button" Button variant="outline" size="sm" (click)="theme.toggle()">
+      {{ theme.isDark() ? '☀ Light' : '☾ Dark' }}
+    </button>
+  </div>
+
+  <p class="mt-4 text-muted-foreground">
+    A zoneless, standalone Angular app styled with the
+    <code class="rounded bg-muted px-1.5 py-0.5 text-sm text-foreground">&#64;ojiepermana/angular</code>
+    design system. The card, buttons, and theme tokens below come from that package.
+  </p>
+
+  <!-- Card family: <Card>, <CardHeader>, <CardTitle>, … from the design system -->
+  <Card class="mt-8 block">
+    <CardHeader>
+      <h3 CardTitle>Backend connectivity</h3>
+      <p CardDescription>Calls the Elysia API at /api/hello via Angular HttpClient.</p>
+    </CardHeader>
+
+    <CardContent>
+      <button type="button" Button variant="default" [disabled]="loading()" (click)="greet()">
+        {{ loading() ? 'Calling API…' : 'Call /api/hello' }}
+      </button>
+
+      @if (message(); as msg) {
+        <p class="mt-4 rounded-md bg-muted px-4 py-3 text-sm text-foreground">{{ msg }}</p>
+      }
+    </CardContent>
+
+    <CardFooter>
+      <span class="text-xs text-muted-foreground">Powered by &#64;ojiepermana/angular v22</span>
+    </CardFooter>
+  </Card>
+</section>
