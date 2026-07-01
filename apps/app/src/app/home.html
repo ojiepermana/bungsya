@@ -2,17 +2,20 @@
   <div class="flex items-center justify-between gap-3">
     <div class="flex items-center gap-3">
       <h1 class="text-3xl font-bold tracking-tight">Angular 22 SPA</h1>
-      <span
-        class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ring-1"
+      <button
+        type="button"
+        title="Re-check backend health"
+        class="inline-flex cursor-pointer items-center rounded-full px-2.5 py-0.5 text-xs font-medium ring-1"
         [class.bg-green-50]="health() === 'ok'"
         [class.text-green-700]="health() === 'ok'"
         [class.ring-green-200]="health() === 'ok'"
         [class.bg-amber-50]="health() !== 'ok'"
         [class.text-amber-700]="health() !== 'ok'"
         [class.ring-amber-200]="health() !== 'ok'"
+        (click)="checkHealth()"
       >
         API: {{ health() }}
-      </span>
+      </button>
     </div>
 
     <!-- Design-system Button (button[Button]) + theme service from @ojiepermana/angular -->
