@@ -1,0 +1,26 @@
+# Dependencies & build artifacts — reinstalled/rebuilt inside the image.
+node_modules
+dist
+.angular
+out-tsc
+*.tsbuildinfo
+
+# Secrets & local env — never bake into the image. Public build config is
+# passed via --build-arg (API_URL / APP_NAME); see Dockerfile.
+.env
+.env.local
+apps/app/src/environments/environment.ts
+
+# VCS, tooling, docs — not needed to build.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+*.md
+docs
+
+# OS / editor noise & logs.
+.DS_Store
+*.log
+.vscode
+.idea
