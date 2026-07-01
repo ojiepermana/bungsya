@@ -9,8 +9,12 @@ dist/
 out-tsc/
 *.tsbuildinfo
 
+# generated from .env by scripts/generate-env.ts
+apps/app/src/environments/environment.ts
+
 # misc
 .DS_Store
 .env
 .env.local
+!.env.example
 *.log

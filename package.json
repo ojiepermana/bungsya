@@ -6,13 +6,15 @@
   "description": "Starterkit: Angular 22 (SPA) + ElysiaJS (API) on Bun, with TailwindCSS v4.",
   "scripts": {
     "dev": "bun run --parallel dev:app dev:api",
-    "dev:app": "ng serve",
-    "dev:api": "bun --watch apps/backend/src/index.ts",
+    "dev:app": "bun run env:generate && ng serve",
+    "dev:api": "bun --hot apps/backend/src/main.ts",
+    "env:generate": "bun scripts/generate-env.ts",
+    "test": "bun test apps/backend",
     "clean": "rm -rf dist .angular",
     "build": "bun run clean && bun run build:app && bun run build:backend",
-    "build:app": "ng build",
-    "build:backend": "bun build apps/backend/src/index.ts --target bun --outdir dist/backend --minify",
-    "start": "bun dist/backend/index.js"
+    "build:app": "bun run env:generate && ng build",
+    "build:backend": "bun build apps/backend/src/main.ts --target bun --outdir dist/backend --minify",
+    "start": "bun dist/backend/main.js"
   },
   "dependencies": {
     "@angular/common": "^22.0.4",
